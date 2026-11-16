@@ -41,7 +41,7 @@ classDiagram
     }
 
     class Carre {
-        +Carre(Point sommet1, Point sommet2, float cote)
+        +Carre(const Point &a, const Point &b, const float &L, const float &l)
     }
 
     class Rectangle {
@@ -49,6 +49,17 @@ classDiagram
         -Point sommet2
         -float longueur
         -float largeur
+        +Rectangle()
+        +Rectangle(Point s1, Point s2, float L, float l)
+        +~Rectangle()
+        +setS1(Point s1) void
+        +setS2(Point s2) void
+        +setLong(float L) void
+        +setLarg(float l) void
+        +getS1() Point
+        +getS2() Point
+        +getLong() float
+        +getLarg() float
     }
 
     class Triangle {
