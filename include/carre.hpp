@@ -6,8 +6,10 @@
 
 class Carre : public Rectangle {
    public:
-   Carre( const Point& a, const Point&b, const float&L, const float&l)
-   : Rectangle (a, b, L, l) {}
+   Carre( const Point& a, const Point&b, float cote)
+   : Rectangle (a, b, cote, cote) {}
 };
+
+
 
 #endif
