@@ -1,6 +1,8 @@
 #ifndef POINT_HPP
 #define POINT_HPP
 
+#include <cmath>
+
 class Point{
     private:
         float x;
@@ -21,6 +23,13 @@ class Point{
 
         float getX(){return x;}
         float getY(){return y;}
+
+    // Distance
+        double distance(Point p){
+            double dx = p.x - x;
+            double dy = p.y - y;
+            return sqrt(dx * dx + dy * dy);
+        }
 };
 
 #endif

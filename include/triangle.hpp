@@ -1,5 +1,6 @@
 #ifndef TRIANGLE_HPP
 #define TRIANGLE_HPP
+#include <cmath>
 
 #include "polygone.hpp"
 #include "point.hpp"
@@ -27,6 +28,24 @@ class Triangle : public Polygone {
         Point getSommetA(){return sommetA;}
         Point getSommetB(){return sommetB;}
         Point getSommetC(){return sommetC;}
+
+    //Aire
+        double getAire(){
+            double a = sommetA.distance(sommetB);
+            double b = sommetB.distance(sommetC);
+            double c = sommetC.distance(sommetA);
+            double s = (a + b + c) / 2;
+            return sqrt(s * (s - a) * (s - b) * (s - c));
+        }
+
+    //Perimetre
+        double getPerimetre(){
+            double a = sommetA.distance(sommetB);
+            double b = sommetB.distance(sommetC);
+            double c = sommetC.distance(sommetA);
+            return a + b + c;
+        }
+        
 };
 
 #endif
