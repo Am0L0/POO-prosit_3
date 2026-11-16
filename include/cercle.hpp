@@ -24,15 +24,15 @@ class Cercle{
         Point getCentre(){return centre;}
         float getRayon(){return rayon;}
     // Methode
-        float CalculeAire(void);
-        float CalculePerimetre(void);
+        float CalculAire(void);
+        float CalculPerimetre(void);
 };
 
-float Cercle::CalculeAire(){
+float Cercle::CalculAire(){
     return M_PI * rayon * rayon;
 }
 
-float Cercle::CalculePerimetre(){
+float Cercle::CalculPerimetre(){
     return 2 * M_PI * rayon;
 }
 

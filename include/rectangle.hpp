@@ -31,15 +31,15 @@ class Rectangle : public Polygone {
         float getLong(){return longueur;}
         float getLarg(){return largeur;}
 
-        float CalculePerimetre(float L, float l);
-        float CalculeAire(float L, float l);
+        float CalculPerimetre(float L, float l);
+        float CalculAire(float L, float l);
 };
 
-float Rectangle::CalculePerimetre(float L,float l){
+float Rectangle::CalculPerimetre(float L,float l){
     return 2*(L+l);
 }
 
-float Rectangle::CalculeAire(float L,float l){
+float Rectangle::CalculAire(float L,float l){
     return L*l;
 }
 #endif
