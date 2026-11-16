@@ -30,6 +30,16 @@ class Rectangle : public Polygone {
         Point getS2(){return sommet2;}
         float getLong(){return longueur;}
         float getLarg(){return largeur;}
+
+        float CalculePerimetre(float L, float l);
+        float CalculeAire(float L, float l);
 };
 
+float Rectangle::CalculePerimetre(float L,float l){
+    return 2*(L+l);
+}
+
+float Rectangle::CalculeAire(float L,float l){
+    return L*l;
+}
 #endif
