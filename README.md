@@ -9,3 +9,27 @@
 |/       |/   \__/(_______)\_______)\_______/   )_(     \______/   |/       (_______)(_______)
 
 ```
+classDiagram
+    class Polygone {
+        
+    }
+
+    class Cercle {
+
+    }
+
+    class Carre {
+
+    }
+
+    class Rectangle {
+
+    }
+
+    class Triangle {
+
+    }
+    
+    Polygone <|-- Carre
+    Polygone <|-- Rectangle
+    Polygone <|-- Triangle
