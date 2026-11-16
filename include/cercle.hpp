@@ -2,6 +2,7 @@
 #define CERCLE_HPP
 
 #include "point.hpp"
+#include <cmath>
 
 class Cercle{
     private:
@@ -22,6 +23,17 @@ class Cercle{
 
         Point getCentre(){return centre;}
         float getRayon(){return rayon;}
+    // Methode
+        float CalculeAire(void);
+        float CalculePerimetre(void);
 };
+
+float Cercle::CalculeAire(){
+    return M_PI * rayon * rayon;
+}
+
+float Cercle::CalculePerimetre(){
+    return 2 * M_PI * rayon;
+}
 
 #endif
