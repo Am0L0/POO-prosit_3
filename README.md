@@ -22,6 +22,7 @@ classDiagram
         +setY(float n_y) void
         +getX() float
         +getY() float
+        +distance(Point p) double
     }
 
     class Polygone {
@@ -38,6 +39,8 @@ classDiagram
         +setRayon(float n_rayon) void
         +getCentre() Point
         +getRayon() float
+        +CalculAire() float
+        +CalculPerimetre() float
     }
 
     class Carre {
@@ -60,6 +63,8 @@ classDiagram
         +getS2() Point
         +getLong() float
         +getLarg() float
+        +CalculPerimetre(float L, float l) float
+        +CalculAire(float L, float l) float
     }
 
     class Triangle {
@@ -76,6 +81,8 @@ classDiagram
         +getSommetA() Point
         +getSommetB() Point
         +getSommetC() Point
+        +getAire() double
+        +getPerimetre() double
     }
 
     Rectangle <|-- Carre
