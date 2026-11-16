@@ -55,6 +55,16 @@ classDiagram
         -Point sommetA
         -Point sommetB
         -Point sommetC
+        +Triangle()
+        +Triangle(Point n_A, Point n_B, Point n_C)
+        +Triangle(const Triangle &t)
+        +~Triangle()
+        +setSommetA(Point n_A) void
+        +setSommetB(Point n_B) void
+        +setSommetC(Point n_C) void
+        +getSommetA() Point
+        +getSommetB() Point
+        +getSommetC() Point
     }
 
     Rectangle <|-- Carre
