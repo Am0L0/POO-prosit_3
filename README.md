@@ -9,6 +9,7 @@
 |/       |/   \__/(_______)\_______)\_______/   )_(     \______/   |/       (_______)(_______)
 
 ```
+```mermaid
 classDiagram
     class Polygone {
         
@@ -33,3 +34,4 @@ classDiagram
     Polygone <|-- Carre
     Polygone <|-- Rectangle
     Polygone <|-- Triangle
+```
