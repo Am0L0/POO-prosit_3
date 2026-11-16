@@ -2,10 +2,12 @@
 #define CARRE_HPP
 
 #include "rectangle.hpp"
+#include "point.hpp"
 
 class Carre : public Rectangle {
-    private:
-    public:
+   public:
+   Carre( const Point& a, const Point&b, const float&L, const float&l)
+   : Rectangle (a, b, L, l) {}
 };
 
 #endif
