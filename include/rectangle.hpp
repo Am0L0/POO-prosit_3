@@ -6,60 +6,30 @@
 
 class Rectangle : public Polygone {
     private:
-    Point sommet1;
-    Point sommet2;
-    float longueur;
-    float largeur;
-
-    public:
-    Rectangle(Point s1,Point s2,float L,float l){
-        sommet1=s1;
-        sommet2=s2;
-        longueur=L;
-        largeur=l;
-    }
-
-    Rectangle(){
         Point sommet1;
-        Point sommet2(1,1);
-        longueur=1;
-        largeur=1;
-    }
+        Point sommet2;
+        float longueur;
+        float largeur;
+    public:
+        Rectangle(Point s1,Point s2,float L,float l){
+            setS1(s1);
+            setS2(s2);
+            setLong(L);
+            setLarg(l);
+        }
+        
+        Rectangle(): sommet1({0.0, 0.0}), sommet2({1.0, 1.0}), longueur(1.0), largeur(1.0){}
+        ~Rectangle(){}
 
-    void S1setter(Point s1){
-        sommet1=s1;
-    }
+        void setS1(Point s1){sommet1=s1;}
+        void setS2(Point s2){sommet2=s2;}
+        void setLong(float L){longueur=L;}
+        void setLarg(float l){largeur=l;}
 
-    void S2setter(Point s2){
-        sommet2=s2;
-    }
-
-    void Lsetter(float L){
-        longueur=L;
-    }
-
-    void Lsetter(float l){
-        largeur=l;
-    }
-
-    Point S1getter(){
-        return sommet1;
-    }
-
-    Point S2getter(){
-        return sommet2;
-    }
-
-    float Lgetter(){
-        return longueur;
-    }
-
-    float lgetter(){
-        return largeur;
-    }
-
-    ~Rectangle(){
-    }
+        Point getS1(){return sommet1;}
+        Point getS2(){return sommet2;}
+        float getLong(){return longueur;}
+        float getLarg(){return largeur;}
 };
 
 #endif
