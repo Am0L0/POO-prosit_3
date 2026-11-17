@@ -53,6 +53,8 @@ Comment gérer la relation entre polygones, cercles, carrés, rectangles et tria
 ## Généralisation
 Apprendre à utiliser l’héritage en C++. Quand plusieurs classes se ressemblent, comme nos formes géométriques, on met ce qu’elles ont en commun dans une classe mère et chaque forme garde seulement ce qui lui est propre. Ça évite de réécrire le même code plusieurs fois, et le programme est plus simple à comprendre et à faire évoluer si on veut ajouter une nouvelle forme plus tard.
 
+## Diagramme de classe
+
 ```mermaid
 classDiagram
     class Point {
@@ -135,4 +137,44 @@ classDiagram
     Cercle --> Point
     Rectangle --> Point
     Triangle --> Point
+```
+
+## Diagramme de séquence
+
+```mermaid
+sequenceDiagram
+    actor Utilisateur
+    participant Main
+    participant Carre
+    participant Rectangle
+    participant Triangle
+    participant Point
+
+    Utilisateur->>Main: Lance le programme
+
+    Note over Main,Rectangle: Création et calculs d'un carré
+    Main->>Carre: Carre(a, b, L, l)
+    Carre->>Rectangle: Rectangle(a, b, L, l)
+    Rectangle-->>Carre: Rectangle initialisé
+    Carre-->>Main: Carré créé
+    Main->>Carre: CalculAire(L, l)
+    Carre->>Rectangle: CalculAire(L, l) (hérité)
+    Rectangle-->>Main: aire
+    Main->>Carre: CalculPerimetre(L, l)
+    Carre->>Rectangle: CalculPerimetre(L, l) (hérité)
+    Rectangle-->>Main: périmètre
+
+    Note over Main,Point: Création et calculs d'un triangle
+    Main->>Triangle: Triangle(A, B, C)
+    Triangle-->>Main: Triangle créé
+    Main->>Triangle: getPerimetre()
+    loop Pour chaque côté
+        Triangle->>Point: distance(autre sommet)
+        Point-->>Triangle: longueur du côté
+    end
+    Triangle-->>Main: périmètre
+    Main->>Triangle: getAire()
+    Triangle-->>Main: aire
+
+    Main-->>Utilisateur: Affiche les résultats
 ```
